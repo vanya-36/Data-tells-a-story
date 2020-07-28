@@ -23,17 +23,8 @@ std_score('Market Cap')
 std_score('Employees')
 #print(df['Market Cap'],df['Employees'])
 #print(df['Market Cap Std score'].loc[9],df['Employees Std score'].loc[9])
-
 df['Market Cap Std score'].loc[9]=0
 df['Employees Std score'].loc[9]=0
-
-"""
-sum1=sum(df['Employees'])
-sum2=np.sum(df['Employees'][0:19])
-for i in range(0,19):
-	print(df['Name'].loc[i])
-print((sum2/sum1)*100)
-"""
 
 #variables for plotting 
 c = range(np.shape(df)[0])
@@ -79,5 +70,7 @@ def hover(event):
             if vis:
                 annot.set_visible(False)
                 fig.canvas.draw_idle()
+                
+#plotting the figure with annotations
 fig.canvas.mpl_connect("motion_notify_event", hover)
 plt.show()
